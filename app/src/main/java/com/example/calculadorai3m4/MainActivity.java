@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     // se crea variable para el textview donde irá el resultado, por su id tv1
     private TextView tv1;
     // se crea variable para el boton
-    private Button bt1, bt2, bt3, bt4;
+    private Button bt1, bt2, bt3, bt4, bt5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         //Se llaman los métodos
         vistas();
         clicks();
+        //Al boton 5 le doy el salir, al set on click se le da el new que sobrescribe
+        bt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // y acá se le da la salida
+                finish();
+            }
+        });
 
     }
 
@@ -35,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         bt2 = (Button) findViewById(R.id.bt2);
         bt3 = (Button) findViewById(R.id.bt3);
         bt4 = (Button) findViewById(R.id.bt4);
+        //agrego el boton 5 salir
+        bt5 = (Button) findViewById(R.id.bt5);
         et1 = (EditText) findViewById(R.id.et1);
         et2 = (EditText) findViewById(R.id.et2);
         tv1 = (TextView) findViewById(R.id.tv1);
